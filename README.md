@@ -96,5 +96,3 @@ Propiedades principales (ver [Models/Notificacion.cs](Models/Notificacion.cs#L1-
 Proyecto de ejemplo — añade licencia si corresponde.
 
 ---
-
-Si quieres, puedo: añadir un `README` más detallado (ej. instrucciones de Docker), crear tests básicos, o preparar un archivo `launchSettings.json` para debugging. ¿Qué prefieres?
