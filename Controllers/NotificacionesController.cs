@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using NotificacionesAPI.Models;
 
 namespace NotificacionesAPI.Controllers;
 
@@ -6,15 +7,18 @@ namespace NotificacionesAPI.Controllers;
 [Route("api/[controller]")]
 public class NotificacionesController : ControllerBase
 {
+    private static List<Notificacion> _notificaciones = new();
+
     [HttpGet]
     public IActionResult GetAll()
     {
-        return Ok("✅ API de notificaciones funcionando");
+        return Ok(_notificaciones);
     }
 
     [HttpPost]
-    public IActionResult Enviar([FromBody] string mensaje)
+    public IActionResult Enviar([FromBody] Notificacion notificacion)
     {
-        return Ok($"📨 Notificación enviada: {mensaje}");
+        _notificaciones.Add(notificacion);
+        return Ok(new { mensaje = "✅ Notificación registrada", datos = notificacion });
     }
 }
